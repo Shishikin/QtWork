@@ -6,6 +6,7 @@
 class QSpinBox;
 class QSlider;
 class FigureWidget;
+class LineDrawerWidget;
 
 class MainForm : public QWidget {
 	Q_OBJECT
@@ -20,6 +21,7 @@ private:
 	QSlider* m_sliderWidth{ nullptr };
 	QSpinBox* m_spinBoxAngle{ nullptr };
 	QSlider* m_sliderAngle{ nullptr };
+	LineDrawerWidget* m_lineDrawerWidget{nullptr};
 };
 
 #endif

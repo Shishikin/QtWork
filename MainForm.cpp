@@ -6,6 +6,7 @@
 
 #include "FigureWidget.h"
 #include "MainForm.h"
+#include "LineDrawerWidget.h"
 
 MainForm::MainForm(QWidget* parent) : QWidget(parent)
 {
@@ -100,4 +101,7 @@ MainForm::MainForm(QWidget* parent) : QWidget(parent)
 	const int LINE_W = 5, LINE_ANGLE = 0;
 	m_figWidget->setWidth(LINE_W);
 	m_figWidget->setAngle(LINE_ANGLE);
+
+	m_lineDrawerWidget = new LineDrawerWidget(this);
+	m_lineDrawerWidget->setGeometry(LEFT_OFS + IMG_W + 20 + 150, TOP_OFS, IMG_W, IMG_H);
 }

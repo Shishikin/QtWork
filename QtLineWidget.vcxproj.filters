@@ -32,12 +32,18 @@
     <ClCompile Include="MainForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LineDrawerWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FigureWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="MainForm.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="LineDrawerWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
