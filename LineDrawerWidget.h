@@ -44,6 +44,7 @@ protected:
      */
     void paintEvent(QPaintEvent* event) override;
 
+
     /**
      * @brief Обрабатывает нажатие кнопки мыши.
      *
@@ -72,6 +73,8 @@ protected:
     void mouseReleaseEvent(QMouseEvent* event) override;
 
 private:
+//    int length;
+//    int width;
     QVector<QPair<QPoint, QPoint>> lines;  // Вектор, хранящий пары начальных и конечных точек всех отрезков
     QPoint startPoint;                     // Начальная точка текущего отрезка
     QPoint endPoint;                       // Конечная точка текущего отрезка

@@ -55,7 +55,7 @@ void FigureWidget::paintEvent(QPaintEvent* event)
 	// QPen – свойства отображения отрезков и контуров с помощью QPainter.
 	QPen pen;
 	pen.setColor(Qt::red);			// Цвет: константа перечислимого типа Qt
-	pen.setStyle(m_penStyle); // Стиль отображения линии
+	pen.setStyle(m_penStyle);       // Стиль отображения линии
 	pen.setCapStyle(Qt::RoundCap);	// Стиль отображения концов отрезков
 	pen.setWidth(m_width);			// Толщина (в пикселах)
 

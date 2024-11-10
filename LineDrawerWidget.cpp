@@ -18,6 +18,7 @@ void LineDrawerWidget::clearLines()
 void LineDrawerWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
+    painter.fillRect(0, 0, size().width(), size().height(), QColor(205, 205, 205));
     painter.setPen(Qt::black);  // Устанавливаем черный цвет для рисования линий
 
     // Отрисовываем все сохраненные отрезки
@@ -26,12 +27,10 @@ void LineDrawerWidget::paintEvent(QPaintEvent* event)
         painter.drawLine(line.first, line.second);  // Рисуем отрезок от начальной до конечной точки
     }
 
-    // Отрисовываем текущий отрезок, если идет его рисование
-    if (isDrawing)
-    {
-        painter.drawLine(startPoint, endPoint);  // Рисуем отрезок от начальной до конечной точки
-    }
 }
+
+
+
 
 // Обрабатывает нажатие левой кнопки мыши
 void LineDrawerWidget::mousePressEvent(QMouseEvent* event)
@@ -57,7 +56,7 @@ void LineDrawerWidget::mouseMoveEvent(QMouseEvent* event)
 // Обрабатывает отпускание левой кнопки мыши
 void LineDrawerWidget::mouseReleaseEvent(QMouseEvent* event)
 {
-    if (event->button() == Qt::LeftButton && isDrawing)  // Если отпущена левая кнопка и идет рисование
+    if (event->button() == Qt::LeftButton)  // Если отпущена левая кнопка и идет рисование
     {
         endPoint = event->pos();  // Фиксируем конечную точку
         lines.append(qMakePair(startPoint, endPoint));  // Сохраняем текущий отрезок в список

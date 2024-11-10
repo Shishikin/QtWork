@@ -3,10 +3,15 @@
 #include <QVBoxLayout>
 #include <QSpinBox>
 #include <QSlider>
+#include <QPushButton>
 
 #include "FigureWidget.h"
 #include "MainForm.h"
 #include "LineDrawerWidget.h"
+
+#define FIRSTCOLECTIONBUTTOMHEIGHT 120
+#define FIRSTCOLECTIONBUTTOMWIDTH 150
+#define INDENT 10
 
 MainForm::MainForm(QWidget* parent) : QWidget(parent)
 {
@@ -36,7 +41,7 @@ MainForm::MainForm(QWidget* parent) : QWidget(parent)
 
 	// Группа виджетов для задания типа фигуры
 	QGroupBox* gbFigType = new QGroupBox("Тип фигуры", this);
-	gbFigType->setGeometry(LEFT_OFS + IMG_W + 20, TOP_OFS, 150, 120);
+	gbFigType->setGeometry(LEFT_OFS + IMG_W + 20, TOP_OFS, FIRSTCOLECTIONBUTTOMWIDTH, FIRSTCOLECTIONBUTTOMHEIGHT);
 	QRadioButton* radio1 = new QRadioButton("&Отрезок");
 	QRadioButton* radio2 = new QRadioButton("&Прямоугольник");
 	QRadioButton* radio3 = new QRadioButton("&Треугольник");
@@ -63,7 +68,7 @@ MainForm::MainForm(QWidget* parent) : QWidget(parent)
 
 	// Группа виджетов для задания типа фигуры
 	QGroupBox* gdLineType = new QGroupBox("Тип фигуры", this);
-	gdLineType->setGeometry(LEFT_OFS + IMG_W + 20, TOP_OFS + 130, 150, 120);
+	gdLineType->setGeometry(LEFT_OFS + IMG_W + 20, TOP_OFS + FIRSTCOLECTIONBUTTOMHEIGHT + INDENT, FIRSTCOLECTIONBUTTOMWIDTH, FIRSTCOLECTIONBUTTOMHEIGHT);
 	QRadioButton* radio4 = new QRadioButton("SolidLine");
 	QRadioButton* radio5 = new QRadioButton("DashLine");
 	QRadioButton* radio6 = new QRadioButton("DotLine");
@@ -103,5 +108,10 @@ MainForm::MainForm(QWidget* parent) : QWidget(parent)
 	m_figWidget->setAngle(LINE_ANGLE);
 
 	m_lineDrawerWidget = new LineDrawerWidget(this);
-	m_lineDrawerWidget->setGeometry(LEFT_OFS + IMG_W + 20 + 150, TOP_OFS, IMG_W, IMG_H);
+	m_lineDrawerWidget->setGeometry(LEFT_OFS + IMG_W + FIRSTCOLECTIONBUTTOMWIDTH + 3 * INDENT, TOP_OFS, IMG_W, IMG_H);
+
+	QPushButton* radio8 = new QPushButton("Очистить", this);
+	radio8->setGeometry(LEFT_OFS + IMG_W + FIRSTCOLECTIONBUTTOMWIDTH + 3 * INDENT, TOP_OFS + IMG_H + INDENT, IMG_W, 40);
+
+	connect(radio8, &QPushButton::clicked, m_lineDrawerWidget, &LineDrawerWidget::clearLines);
 }
