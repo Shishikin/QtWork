@@ -73,21 +73,12 @@ protected:
     void mouseReleaseEvent(QMouseEvent* event) override;
 
 private:
-//    int length;
-//    int width;
+
     QVector<QPair<QPoint, QPoint>> lines;  // Вектор, хранящий пары начальных и конечных точек всех отрезков
     QPoint startPoint;                     // Начальная точка текущего отрезка
     QPoint endPoint;                       // Конечная точка текущего отрезка
     bool isDrawing;                        // Флаг, указывающий, что в данный момент идет рисование
 
-signals:
-    /**
-     * @brief Сигнал, вызываемый при обновлении списка отрезков.
-     *
-     * Сигнал можно использовать для оповещения других компонентов об изменении данных
-     * виджета, например, для синхронизации с интерфейсом.
-     */
-    void linesUpdated();
 };
 
 #endif // LINEDRAWERWIDGET_H

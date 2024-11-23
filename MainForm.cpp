@@ -89,7 +89,7 @@ MainForm::MainForm(QWidget* parent) : QWidget(parent)
 		[this] { m_figWidget->setPenStyle(Qt::DotLine); });
 	connect(radio7, &QRadioButton::clicked,
 		[this] { m_figWidget->setPenStyle(Qt::DashDotLine); });
-
+	
 	connect(m_spinBoxWidth, SIGNAL(valueChanged(int)), m_sliderWidth, SLOT(setValue(int)));
 	connect(m_sliderWidth, SIGNAL(valueChanged(int)), m_spinBoxWidth, SLOT(setValue(int)));
 	connect(m_sliderWidth, SIGNAL(valueChanged(int)), m_figWidget, SLOT(setWidth(int)));

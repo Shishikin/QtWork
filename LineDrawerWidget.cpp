@@ -26,6 +26,10 @@ void LineDrawerWidget::paintEvent(QPaintEvent* event)
     {
         painter.drawLine(line.first, line.second);  // Рисуем отрезок от начальной до конечной точки
     }
+    if (isDrawing)
+    {
+    painter.drawLine(startPoint, endPoint);
+    }
 
 }
 

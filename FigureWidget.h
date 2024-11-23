@@ -6,7 +6,7 @@
 enum class FigureType {
 	line,
 	rectangle,
-	triangle,
+	triangle
 };
 
 class FigureWidget : public QWidget {
